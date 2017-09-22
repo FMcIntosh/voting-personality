@@ -1,24 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { green } from 'styles/colors';
 import Link from 'next/link';
+import Button from 'material-ui/Button';
 
-export default ({ href, as, children}) => {
-  console.log(as);
-  return (
+export default ({ href, as, children}) => (
     <Link href={href} as="personality">
-      <StyledLink>{ children }</StyledLink>
+      <StyledLink> 
+        <Button raised color="primary">
+          {children}
+        </Button>
+      </StyledLink>
     </Link>
-  )
-}
+)
+
 
 const StyledLink = styled.a`
-  padding: 0 20px;
-  border-radius: 20px;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${green};
-  color: white;
+  text-decoration: none;
 `
