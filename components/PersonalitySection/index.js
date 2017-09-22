@@ -6,7 +6,7 @@ const attributes = ["Openness", "Concientiousness", "Extraversion", "Agreeablene
 
 export default () => {
   const inputs = attributes.map(station => (
-    <Input placeholder={station} key={station}/>
+    <Input placeholder={station} id={station}/>
     ));
   
   return (
