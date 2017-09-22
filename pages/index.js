@@ -9,25 +9,21 @@ import Button from 'components/Button';
 import { green, darkOrange, darkGrey } from 'styles/colors';
 import Link from 'next/link';
 
-import { orange } from 'styles/colors';
+import { primary, lightPrimary } from 'styles/colors';
 
 export default () => (
   <Background>
-    <Card>
+    <Wrapper>
       <CardTitle>Voting and Personality</CardTitle>
-      <p>Research into the link between personality and voting has shown that there is correlation between your big five personality
+      <Paragraph>Research into the link between personality and voting has shown that there is correlation between your big five personality
                       and so on.
-        </p>       
+      </Paragraph> 
+      <Paragraph>Here's your chance to see if your personality might influence who you voted for in New Zealand's 2017 general election.
+      </Paragraph>        
       <Button href="/personality">Get Started!</Button>
-    </Card>
+    </Wrapper>
   </Background>
 ) 
-
-const Button = ({ href, children}) => (
-  <Link href={href}>
-    <StyledLink>{children}</StyledLink>
-  </Link>
-)
 
 const Background = styled.div`
     width: 100vw;
@@ -36,20 +32,16 @@ const Background = styled.div`
     position: relative;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: ${orange};
+    background: ${primary};
 `
-
-const StyledLink = styled.a`
-    padding: 0 20px;
-    border-radius: 20px;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: ${green};
-    color: white;
-`
-
 const Paragraph = styled.p`
+  color: white;
+  font-weight: 300;
+  text-align: center;
+`
+const Wrapper = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
