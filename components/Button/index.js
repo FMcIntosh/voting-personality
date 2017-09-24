@@ -6,7 +6,7 @@ import Button from 'material-ui/Button';
 export default ({ href, as, children}) => (
     <Link href={href} as="personality">
       <StyledLink> 
-        <Button raised color="primary">
+        <Button raised color="accent">
           {children}
         </Button>
       </StyledLink>
@@ -16,4 +16,5 @@ export default ({ href, as, children}) => (
 
 const StyledLink = styled.a`
   text-decoration: none;
+  margin-top: 30px;
 `
