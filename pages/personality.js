@@ -1,34 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Header from 'components/Header';
 import Card from 'components/Card';
-import CardTitle from 'components/CardTitle';
 import Button from 'components/Button';
 import PersonalitySection from 'components/PersonalitySection';
+import AppBar from 'components/AppBar';
+import { Header, Paragraph } from 'components/Text';
+import Typography from 'material-ui/Typography';
+import MuiThemeWrapper from 'hoc/MuiThemeWrapper';
 
-import { orange } from 'styles/colors';
-
-export default () => (
-  <Background>
+const Personality = () => (
+  <Wrapper>
+    <AppBar>Personality</AppBar>
     <Card>
-      <CardTitle>Personality</CardTitle>
-      <p>First you will need to complete an online test to score your personality. Complete one here:
-        </p> 
-        <p>Enter your score below</p>    
+      <Header>Personality</Header>
+      <Paragraph>First you will need to complete an online test to score your personality. Complete one here:
+        </Paragraph> 
+        <Paragraph>Enter your score below</Paragraph>    
       <PersonalitySection />
       <Button href="/personal" as="personality">Next</Button>
     </Card>
-  </Background>
+  </Wrapper>
 ) 
 
-const Background = styled.div`
-    width: 100vw;
+export default MuiThemeWrapper(Personality);
+
+const Wrapper = styled.div`
+    margin-top: 40px;
     min-height: 100vh;
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: ${orange};
 `
