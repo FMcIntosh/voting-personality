@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Button from 'material-ui/Button';
 
 export default ({ href, as, children}) => (
-    <Link href={href} as="personality">
+    <Link href={href} as={as}>
       <StyledLink> 
         <Button raised color="accent">
           {children}
