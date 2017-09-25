@@ -18,7 +18,7 @@ const Personality = () => (
         </Paragraph> 
         <Paragraph>Enter your score below</Paragraph>    
       <PersonalitySection />
-      <Button href="/personal" as="personality">Next</Button>
+      <Button href="/profile">Next</Button>
     </Card>
   </Wrapper>
 ) 
