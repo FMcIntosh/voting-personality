@@ -1,22 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
 import Input from './Input';
+import Grid from 'material-ui/Grid';
+import TextField from 'material-ui/TextField';
 
 const attributes = ["Openness", "Concientiousness", "Extraversion", "Agreeableness", "Neuroticism"];
 
-export default () => {
-  const inputs = attributes.map(station => (
-    <Input placeholder={station} id={station}/>
-    ));
-  
-  return (
-    <Wrapper>
-      {inputs}
-    </Wrapper>
-  )
+class PersonalityForm extends React.Component {
+  state = {
+    oppenness: '',
+  };
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Grid container direction="column" align="center">
+        <form noValidate autoComplete="off">
+          <TextField
+            id="oppenness"
+            label="Openness"
+            value={this.state.oppenness}
+            onChange={this.handleChange('oppenness')}
+            margin="dense"
+          />
+        </form>
+      </Grid>
+    );
+  }
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`
+export default PersonalityForm
