@@ -7,9 +7,9 @@ import MuiThemeWrapper from 'hoc/MuiThemeWrapper';
 
 const text1 = "Ever wondered if your personality influences who you vote for? Research into "
 + "the link between personality and voting has shown that there is correlation between big five personality"
-+ "and who you vote for";
++ " and who you vote for";
 
-const text2 = "Here's your chance to see if your personality might have influenced who you voted for in New Zealand's 2017 general election"
+const text2 = "Here's your chance to see if your personality might have influenced who you gave your vote to in New Zealand's 2017 general election"
 
 
 const Index = () => (
@@ -26,7 +26,7 @@ const Index = () => (
 export default MuiThemeWrapper(Index);
 
 const Background = styled.div`
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     position: relative;
@@ -39,5 +39,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px
+  padding: 50px 0;
+  @media (max-width: 500px) {
+		width: 90%;
+	}
+}
 `

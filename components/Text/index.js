@@ -37,7 +37,7 @@ export const Header = withTheme(({ theme, children, light }) => {
 export const Paragraph = withTheme(({ theme, children, light }) => {
   const style = {
     color: light ? theme.palette.primary[50] : theme.palette.text.primary,
-    fontSize: "20px",
+    fontSize: "18px",
     fontWeight: "300",
     margin: "20px"
   }

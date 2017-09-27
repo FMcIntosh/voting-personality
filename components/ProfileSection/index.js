@@ -33,7 +33,7 @@ class SimpleSelect extends React.Component {
 
     return (
       <form className={classes.container} autoComplete="off">
-        <Grid container direction="column" lg="12" sm="12">
+        <Grid container direction="column">
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="gender">Gender</InputLabel>
           <Select
@@ -49,7 +49,7 @@ class SimpleSelect extends React.Component {
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="qualification">Qualification</InputLabel>
           <Select
-            value={this.state.age}
+            value={this.state.qualification}
             onChange={this.handleChange('qualification')}
             input={<Input id="qualification" />}
           >
