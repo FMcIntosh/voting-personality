@@ -8,8 +8,6 @@ import { withTheme } from 'material-ui/styles';
 const MyAppBar =  ({ theme, children }) => {
   const lightPrimaryText = theme.palette.primary[100];
   const primaryColor = theme.palette.primary[500];
-  
-  console.log(theme.palette)
 
   const styles = {
     primaryText: {
