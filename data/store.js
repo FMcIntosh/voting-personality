@@ -1,4 +1,6 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux';
+
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 const initialState = {
   oppenness: 0
@@ -22,5 +24,5 @@ export const submit = (o) =>  {
 }
 // create a store creator
 export const makeStore = (initialState) => {
-  return createStore(reducer, initialState);
+  return createStore(reducer, initialState, devToolsEnhancer())
 }
