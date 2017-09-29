@@ -8,8 +8,10 @@ import AppBar from 'components/AppBar';
 import { Header, Paragraph } from 'components/Text';
 import Typography from 'material-ui/Typography';
 import MuiThemeWrapper from 'hoc/MuiThemeWrapper';
+import { makeStore, submit } from 'data/store'
+import withRedux from "next-redux-wrapper"
 
-const Personality = () => (
+const Personality = ({ dispatch }) => (
   <Wrapper>
     <AppBar>Personality</AppBar>
     <Card>
@@ -17,13 +19,12 @@ const Personality = () => (
       <Paragraph>First you will need to complete an online test to score your personality. Complete one here:
         </Paragraph> 
         <Paragraph>Enter your score below</Paragraph>    
-      <PersonalitySection />
-      <Button href="/profile">Next</Button>
+      <PersonalitySection dispatch={dispatch}/>
     </Card>
   </Wrapper>
-) 
+)
 
-export default MuiThemeWrapper(Personality);
+export default withRedux(makeStore, null)(MuiThemeWrapper(Personality));
 
 const Wrapper = styled.div`
     margin-top: 40px;

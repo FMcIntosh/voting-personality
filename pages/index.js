@@ -4,6 +4,8 @@ import { Title, Paragraph } from 'components/Text';
 import Button from 'components/Button';
 import { primary, lightPrimary } from 'styles/colors';
 import MuiThemeWrapper from 'hoc/MuiThemeWrapper';
+import { makeStore, submit } from 'data/store'
+import withRedux from "next-redux-wrapper"
 
 const text1 = "Ever wondered if your personality influences who you vote for? Research into "
 + "the link between personality and voting has shown that there is correlation between big five personality"
@@ -23,7 +25,7 @@ const Index = () => (
   </Background>
 ) 
 
-export default MuiThemeWrapper(Index);
+export default withRedux(makeStore, null)(MuiThemeWrapper(Index))
 
 const Background = styled.div`
     width: 100%;

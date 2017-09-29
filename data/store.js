@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
 const initialState = {
-  oppenness: 0
+  personality: {}
 }
 
 export const actionTypes = {
@@ -13,14 +13,14 @@ export const actionTypes = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
       case actionTypes.SUBMIT:
-          return Object.assign({}, state, { oppenness: action.oppenness })
+          return Object.assign({}, state, { personality: action.personality })
       default:
           return state
   }
 }
 
-export const submit = (o) =>  {
-  return { type: actionTypes.SUBMIT, oppenness: o }
+export const submit = (personality) =>  {
+  return { type: actionTypes.SUBMIT, personality: personality}
 }
 // create a store creator
 export const makeStore = (initialState) => {

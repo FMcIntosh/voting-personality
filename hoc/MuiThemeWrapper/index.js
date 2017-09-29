@@ -8,7 +8,7 @@ const decorator = (ComposedComponent) => {
   
   const theme = createMuiTheme({
     palette: {
-      primary: orange, // Purple and green play nicely together.
+      primary: orange,
       secondary: {
         ...indigo,
         A200: '#536dfe',
