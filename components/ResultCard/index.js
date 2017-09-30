@@ -25,7 +25,6 @@ export default class ResultCard extends Component {
         fontSize: "16px",
         margin: 0,
         textAlign: "left",
-        color: textColor
       }
     }
   
