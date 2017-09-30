@@ -2,34 +2,42 @@ export default (personality) => {
   const parties = {
     national: {
       name: 'National',
-      color: 'blue'
+      color: 'blue',
+      textColor: 'white',
     },
     labour: {
       name: 'Labour',
-      color: 'red'
+      color: 'red',
+      textColor: 'white,'
     },
     green: {
-      name: 'Green Party',
-      color: 'green'
+      name: 'Green',
+      color: 'green',
+      textColor: 'white'
     },
     nzf: {
       name: 'New Zealand First',
       color: 'black',
-      textColor: 'white'
+      textColor: 'white',
     },
     act: {
       name: 'ACT',
-      color: 'black'
+      color: '#ffda37',
+      textColor: '#063964',
     },
     maori: {
-      name: 'ACT',
-      color: 'black'
+      name: 'Maori',
+      color: 'black',
+      textColor: 'white',
     },
     top: {
+      name: 'TOP',
+      color: 'black',
+      textColor: 'white',
     },
   }
 
-  const party = 'national'
+  const party = 'act'
   //TODO
   return parties[party]
 }
