@@ -15,7 +15,7 @@ const Personality = ({ dispatch }) => (
   <Wrapper>
     <AppBar>Personality</AppBar>
     <Card>
-      <Header>Personality</Header>
+      <Header gutter>Personality</Header>
       <Paragraph>First you will need to complete an online test to score your personality. Complete one here:
         </Paragraph> 
         <Paragraph>Enter your score below</Paragraph>    

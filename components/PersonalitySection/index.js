@@ -29,7 +29,7 @@ class PersonalityForm extends React.Component {
     e.preventDefault()
     this.props.dispatch(submit(this.state))
     console.log(this.state)
-    Router.replace('/')
+    Router.replace('/result')
   }
 
   render() {
@@ -37,7 +37,7 @@ class PersonalityForm extends React.Component {
 
     const style = {
       button: {
-        margin: "20px 0;"
+        margin: "20px 0"
       }
     }
 

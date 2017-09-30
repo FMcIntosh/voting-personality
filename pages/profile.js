@@ -12,16 +12,20 @@ const Personal = () => (
   <Background>
     <AppBar>Profile</AppBar>
     <Card>
-      <Header>Profile</Header>
+      <Header gutter>Profile</Header>
       <ProfileSection />
-      <Button href="/profile">Guess My Vote</Button>
     </Card>
   </Background>
 ) 
 
 export default MuiThemeWrapper(Personal);
 
-const Background = styled.div`
+const Wrapper = styled.div`
   margin-top: 40px;
-
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
