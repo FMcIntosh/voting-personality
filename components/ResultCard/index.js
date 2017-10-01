@@ -25,6 +25,9 @@ export default class ResultCard extends Component {
         fontSize: "16px",
         margin: 0,
         textAlign: "left",
+      },
+      actions: {
+        justifyContent: "center"
       }
     }
   
@@ -44,13 +47,14 @@ export default class ResultCard extends Component {
             </Paragraph>
 
           </CardContent>
-          <CardActions disableActionSpacing>
+          <CardActions disableActionSpacing style={styles.actions}>
             <Button
+              color="accent"
               onClick={this.handleExpandClick}
               aria-expanded={this.state.expanded}
               aria-label="Show more"
             >
-              Hi
+              Why is this?
             </Button>
           </CardActions>
           <Collapse in={this.state.expanded} transitionDuration="auto" unmountOnExit>

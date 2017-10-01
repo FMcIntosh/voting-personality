@@ -28,7 +28,6 @@ export default withRedux(makeStore, null)(MuiThemeWrapper(Personality));
 
 const Wrapper = styled.div`
     margin-top: 40px;
-    min-height: 100vh;
     display: flex;
     position: relative;
     flex-direction: column;
