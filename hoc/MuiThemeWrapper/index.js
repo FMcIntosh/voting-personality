@@ -5,7 +5,7 @@ import orange from 'material-ui/colors/orange';
 import red from 'material-ui/colors/red';
 
 const decorator = (ComposedComponent) => {
-  
+
   const theme = createMuiTheme({
     palette: {
       primary: orange,
@@ -16,7 +16,7 @@ const decorator = (ComposedComponent) => {
       error: red,
     },
   });
-  
+
   return class extends Component {
 
     static async getInitialProps(ctx) {
@@ -45,10 +45,10 @@ const decorator = (ComposedComponent) => {
       return (
         <div>
           <MuiThemeProvider theme={theme}>
-              <ComposedComponent
-                {...this.props}
-              />
-            </MuiThemeProvider>
+            <ComposedComponent
+              {...this.props}
+            />
+          </MuiThemeProvider>
         </div>
       )
     }

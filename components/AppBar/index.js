@@ -5,7 +5,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import { withTheme } from 'material-ui/styles';
 
-const MyAppBar =  ({ theme, children }) => {
+const MyAppBar = ({ theme, children }) => {
   const lightPrimaryText = theme.palette.primary[100];
   const primaryColor = theme.palette.primary[500];
 
@@ -17,13 +17,13 @@ const MyAppBar =  ({ theme, children }) => {
   }
 
   return (
-  <AppBar position="fixed" color="primary">
-    <Toolbar>
-      <Typography type="title" style={styles.primaryText}>
-        {children}
-      </Typography>
-    </Toolbar>
-  </AppBar>
+    <AppBar position="fixed" color="primary">
+      <Toolbar>
+        <Typography type="title" style={styles.primaryText}>
+          {children}
+        </Typography>
+      </Toolbar>
+    </AppBar>
   )
 }
 

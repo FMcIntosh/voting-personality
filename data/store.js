@@ -12,15 +12,15 @@ export const actionTypes = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-      case actionTypes.SUBMIT:
-          return Object.assign({}, state, { personality: action.personality })
-      default:
-          return state
+    case actionTypes.SUBMIT:
+      return Object.assign({}, state, { personality: action.personality })
+    default:
+      return state
   }
 }
 
-export const submit = (personality) =>  {
-  return { type: actionTypes.SUBMIT, personality: personality}
+export const submit = (personality) => {
+  return { type: actionTypes.SUBMIT, personality: personality }
 }
 // create a store creator
 export const makeStore = (initialState) => {

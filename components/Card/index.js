@@ -5,7 +5,7 @@ export default ({ children }) => (
   <Wrapper>
     {children}
   </Wrapper>
-    )
+)
 
 const Wrapper = styled.div`
     background: white;

@@ -33,19 +33,19 @@ class PersonalityForm extends React.Component {
     },
     formValid: false
   };
-  
+
 
   handleChange = name => event => {
     return (event.target.value <= 100 && event.target.value >= 0)
       ? this.setState({
-        [name]: {value: event.target.value},
+        [name]: { value: event.target.value },
       }, () => this.setState({ formValid: this.formIsValid(name, this.state[name]) }))
 
-      :  this.setState({
-        [name] : {error: true}
-      },  () => this.setState({ formValid : false }))
+      : this.setState({
+        [name]: { error: true }
+      }, () => this.setState({ formValid: false }))
 
-      
+
   };
 
   handleSubmit = (e) => {
@@ -57,13 +57,13 @@ class PersonalityForm extends React.Component {
           personality[key] = value.value
         }
       })
-       
+
     this.props.dispatch(submit(personality))
     Router.replace('/result')
   }
 
   formIsValid = (name, value) => {
-    if( value.value === '')
+    if (value.value === '')
       return false
 
     let isValid = true;
@@ -76,7 +76,7 @@ class PersonalityForm extends React.Component {
             isValid = false;
           }
         }
-       
+
       }
     );
 
@@ -93,8 +93,8 @@ class PersonalityForm extends React.Component {
     }
 
     return (
-        <form noValidate onSubmit={this.handleSubmit} autoComplete="off">
-          <Grid container direction="column" align="center">
+      <form noValidate onSubmit={this.handleSubmit} autoComplete="off">
+        <Grid container direction="column" align="center">
           <TextField
             error={this.state.o.error}
             id="oppenness"
@@ -106,7 +106,7 @@ class PersonalityForm extends React.Component {
           <TextField
             error={this.state.c.error}
             id="conscientiousness"
-            label={this.state.c.error ? "Value between 0-100" :"Conscientiousness"}
+            label={this.state.c.error ? "Value between 0-100" : "Conscientiousness"}
             value={this.state.c.value}
             onChange={this.handleChange('c')}
             margin="dense"
@@ -114,7 +114,7 @@ class PersonalityForm extends React.Component {
           <TextField
             error={this.state.e.error}
             id="extraversion"
-            label={this.state.e.error ? "Value between 0-100" :"Extraversion"}
+            label={this.state.e.error ? "Value between 0-100" : "Extraversion"}
             value={this.state.e.value}
             onChange={this.handleChange('e')}
             margin="dense"
@@ -122,7 +122,7 @@ class PersonalityForm extends React.Component {
           <TextField
             error={this.state.a.error}
             id="agreeableness"
-            label={this.state.a.error ? "Value between 0-100" :"Agreeableness"}
+            label={this.state.a.error ? "Value between 0-100" : "Agreeableness"}
             value={this.state.a.value}
             onChange={this.handleChange('a')}
             margin="dense"
@@ -135,18 +135,18 @@ class PersonalityForm extends React.Component {
             onChange={this.handleChange('n')}
             margin="dense"
           />
-          <Button 
-            raised 
-            style={style.button} 
-            color="accent" 
+          <Button
+            raised
+            style={style.button}
+            color="accent"
             type="submit"
             disabled={!this.state.formValid}
           >
             Submit
           </Button>
-          </Grid>
-        </form>
-      
+        </Grid>
+      </form>
+
     );
   }
 }

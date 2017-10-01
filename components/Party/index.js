@@ -6,7 +6,7 @@ export default ({ name, color, textColor }) => {
 
   const styles = {
     div: {
-      background: color, 
+      background: color,
       width: "100%",
       height: "50px",
       display: "flex",
@@ -21,7 +21,7 @@ export default ({ name, color, textColor }) => {
   }
 
   return (
-    <div style={styles.div}>    
+    <div style={styles.div}>
       <Header light style={styles.header}>
         {name}
       </Header>

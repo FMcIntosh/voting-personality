@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Button from 'material-ui/Button';
 
-export default ({ href, as, children, type}) => (
-    <Link href={href} as={as}>
-      <StyledLink> 
-        <Button raised color="accent" type={type}>
-          {children}
-        </Button>
-      </StyledLink>
-    </Link>
+export default ({ href, as, children, type }) => (
+  <Link href={href} as={as}>
+    <StyledLink>
+      <Button raised color="accent" type={type}>
+        {children}
+      </Button>
+    </StyledLink>
+  </Link>
 )
 
 

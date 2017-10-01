@@ -22,9 +22,9 @@ const Result = ({ party }) => (
       />
     </Card>
   </Background>
-) 
+)
 
-Result.getInitialProps = ({store}) => {
+Result.getInitialProps = ({ store }) => {
   // component will read from store's state when rendered
   const party = Predict(store.getState().personality)
   return { party }

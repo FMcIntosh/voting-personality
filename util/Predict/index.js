@@ -40,13 +40,13 @@ export default (personality) => {
   let party = '';
   switch (personality.o) {
     case 1:
-      party='act'
+      party = 'act'
       break
     case 2:
-      party='nzf'
+      party = 'nzf'
       break
     default:
-      party='national'
+      party = 'national'
   }
   //TODO
   return parties[party]

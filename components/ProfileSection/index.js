@@ -34,31 +34,31 @@ class SimpleSelect extends React.Component {
     return (
       <form className={classes.container} autoComplete="off">
         <Grid container direction="column">
-        <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="gender">Gender</InputLabel>
-          <Select
-            value={this.state.age}
-            onChange={this.handleChange('age')}
-            input={<Input id="gender" />}
-          >
-            <MenuItem value="male">Male</MenuItem>
-            <MenuItem value="female">Female</MenuItem>
-            <MenuItem value="other">Other</MenuItem>
-          </Select>
-        </FormControl>
-        <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="qualification">Qualification</InputLabel>
-          <Select
-            value={this.state.qualification}
-            onChange={this.handleChange('qualification')}
-            input={<Input id="qualification" />}
-          >
-            <MenuItem value="highschool">High School</MenuItem>
-            <MenuItem value="university">University</MenuItem>
-            <MenuItem value="other">Other</MenuItem>
-          </Select>
-          <FormHelperText>Highest education level</FormHelperText>
-        </FormControl>
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="gender">Gender</InputLabel>
+            <Select
+              value={this.state.age}
+              onChange={this.handleChange('age')}
+              input={<Input id="gender" />}
+            >
+              <MenuItem value="male">Male</MenuItem>
+              <MenuItem value="female">Female</MenuItem>
+              <MenuItem value="other">Other</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="qualification">Qualification</InputLabel>
+            <Select
+              value={this.state.qualification}
+              onChange={this.handleChange('qualification')}
+              input={<Input id="qualification" />}
+            >
+              <MenuItem value="highschool">High School</MenuItem>
+              <MenuItem value="university">University</MenuItem>
+              <MenuItem value="other">Other</MenuItem>
+            </Select>
+            <FormHelperText>Highest education level</FormHelperText>
+          </FormControl>
         </Grid>
       </form>
     );
