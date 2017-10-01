@@ -59,7 +59,7 @@ class PersonalityForm extends React.Component {
       })
 
     this.props.dispatch(submit(personality))
-    Router.replace('/result')
+    Router.push('/result')
   }
 
   formIsValid = (name, value) => {

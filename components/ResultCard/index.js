@@ -5,6 +5,7 @@ import Button from 'material-ui/Button'
 import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-ui/Card';
 import Collapse from 'material-ui/transitions/Collapse';
 import Typography from 'material-ui/Typography'
+import styled from 'styled-components'
 
 
 export default class ResultCard extends Component {
@@ -19,7 +20,7 @@ export default class ResultCard extends Component {
 
     const styles = {
       card: {
-        width: 400,
+        width: '60%'
       },
       text: {
         fontSize: "16px",
@@ -28,12 +29,12 @@ export default class ResultCard extends Component {
       },
       actions: {
         justifyContent: "center"
-      }
+      },
     }
 
     const text = `Based on your personality, we predict that you voted ${name} in the election`
     return (
-      <Card style={styles.card}>
+      <CardS>
         <CardMedia>
           <Party
             name={name}
@@ -86,7 +87,16 @@ export default class ResultCard extends Component {
               </Typography>
           </CardContent>
         </Collapse>
-      </Card>
+      </CardS>
     )
   }
 }
+
+const CardS = styled(Card) `
+  width: 90%;
+
+  @media (min-width: 500px) {
+    width: 60%;
+    background: green;
+  }
+`

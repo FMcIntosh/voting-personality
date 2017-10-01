@@ -2,17 +2,17 @@ export default (personality) => {
   const parties = {
     national: {
       name: 'National',
-      color: 'blue',
+      color: '#2c81b8',
       textColor: 'white',
     },
     labour: {
       name: 'Labour',
-      color: 'red',
-      textColor: 'white,'
+      color: '#d82c20',
+      textColor: 'white',
     },
     green: {
       name: 'Green',
-      color: 'green',
+      color: '#00c760',
       textColor: 'white'
     },
     nzf: {
@@ -28,26 +28,44 @@ export default (personality) => {
     maori: {
       name: 'Maori',
       color: 'black',
-      textColor: 'white',
+      textColor: '#bf0001',
     },
     top: {
       name: 'TOP',
-      color: 'black',
-      textColor: 'white',
+      color: 'white',
+      textColor: 'black',
     },
   }
 
   let party = '';
+  console.log(personality.o)
   switch (personality.o) {
-    case 1:
+    case '1':
+      party = 'national'
+      break
+    case '2':
+      party = 'labour'
+      break
+    case '3':
+      console.log("WHAT")
+      party = 'nzf'
+      break
+    case '4':
+      party = 'green'
+      break
+    case '5':
+      party = 'top'
+      break
+    case '6':
       party = 'act'
       break
-    case 2:
-      party = 'nzf'
+    case '6':
+      party = 'maori'
       break
     default:
       party = 'national'
   }
   //TODO
+  console.log(party)
   return parties[party]
 }
