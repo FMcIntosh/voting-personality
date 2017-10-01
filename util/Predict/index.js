@@ -37,7 +37,17 @@ export default (personality) => {
     },
   }
 
-  const party = 'act'
+  let party = '';
+  switch (personality.o) {
+    case 1:
+      party='act'
+      break
+    case 2:
+      party='nzf'
+      break
+    default:
+      party='national'
+  }
   //TODO
   return parties[party]
 }

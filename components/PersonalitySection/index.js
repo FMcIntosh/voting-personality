@@ -11,25 +11,76 @@ const attributes = ["Openness", "Concientiousness", "Extraversion", "Agreeablene
 
 class PersonalityForm extends React.Component {
   state = {
-    o: '',
-    c: '',
-    e: '',
-    a: '',
-    n: ''
+    o: {
+      value: '',
+      error: false
+    },
+    c: {
+      value: '',
+      error: false
+    },
+    e: {
+      value: '',
+      error: false
+    },
+    a: {
+      value: '',
+      error: false
+    },
+    n: {
+      value: '',
+      error: false
+    },
+    formValid: false
   };
   
 
   handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
+    return (event.target.value <= 100 && event.target.value >= 0)
+      ? this.setState({
+        [name]: {value: event.target.value},
+      }, () => this.setState({ formValid: this.formIsValid(name, this.state[name]) }))
+
+      :  this.setState({
+        [name] : {error: true}
+      },  () => this.setState({ formValid : false }))
+
+      
   };
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.dispatch(submit(this.state))
-    console.log(this.state)
+    const personality = {}
+    Object.entries(this.state).forEach(
+      ([key, value]) => {
+        if (key !== 'formValid') {
+          personality[key] = value.value
+        }
+      })
+       
+    this.props.dispatch(submit(personality))
     Router.replace('/result')
+  }
+
+  formIsValid = (name, value) => {
+    if( value.value === '')
+      return false
+
+    let isValid = true;
+    Object.entries(this.state).forEach(
+      ([key, value]) => {
+        if (key === name || key === 'formValid') {
+        }
+        else {
+          if (value.error || value.value === '') {
+            isValid = false;
+          }
+        }
+       
+      }
+    );
+
+    return isValid
   }
 
   render() {
@@ -45,41 +96,54 @@ class PersonalityForm extends React.Component {
         <form noValidate onSubmit={this.handleSubmit} autoComplete="off">
           <Grid container direction="column" align="center">
           <TextField
+            error={this.state.o.error}
             id="oppenness"
-            label="Openness"
-            value={this.state.o}
+            label={this.state.o.error ? "Value between 0-100" : "Openness"}
+            value={this.state.o.value}
             onChange={this.handleChange('o')}
             margin="dense"
           />
           <TextField
+            error={this.state.c.error}
             id="conscientiousness"
-            label="Conscientiousness"
-            value={this.state.c}
+            label={this.state.c.error ? "Value between 0-100" :"Conscientiousness"}
+            value={this.state.c.value}
             onChange={this.handleChange('c')}
             margin="dense"
           />
           <TextField
+            error={this.state.e.error}
             id="extraversion"
-            label="Extraversion"
-            value={this.state.e}
+            label={this.state.e.error ? "Value between 0-100" :"Extraversion"}
+            value={this.state.e.value}
             onChange={this.handleChange('e')}
             margin="dense"
           />
           <TextField
+            error={this.state.a.error}
             id="agreeableness"
-            label="Agreeableness"
-            value={this.state.a}
+            label={this.state.a.error ? "Value between 0-100" :"Agreeableness"}
+            value={this.state.a.value}
             onChange={this.handleChange('a')}
             margin="dense"
           />
           <TextField
+            error={this.state.n.error}
             id="neuroticism"
-            label="Neuroticism"
-            value={this.state.n}
+            label={this.state.n.error ? "Value between 0-100" : "Neuroticism"}
+            value={this.state.n.value}
             onChange={this.handleChange('n')}
             margin="dense"
           />
-          <Button raised style={style.button} color="accent" type="submit">Submit</Button>
+          <Button 
+            raised 
+            style={style.button} 
+            color="accent" 
+            type="submit"
+            disabled={!this.state.formValid}
+          >
+            Submit
+          </Button>
           </Grid>
         </form>
       
