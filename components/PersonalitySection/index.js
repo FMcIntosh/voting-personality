@@ -42,7 +42,7 @@ class PersonalityForm extends React.Component {
       }, () => this.setState({ formValid: this.formIsValid(name, this.state[name]) }))
 
       : this.setState({
-        [name]: { error: true }
+        [name]: { value: event.target.value, error: true }
       }, () => this.setState({ formValid: false }))
 
 
