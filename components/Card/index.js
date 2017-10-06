@@ -14,4 +14,5 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 50px 40px;
     box-sizing: border-box;
+    width: 100%;
 `

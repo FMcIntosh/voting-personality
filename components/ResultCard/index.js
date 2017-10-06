@@ -93,10 +93,7 @@ export default class ResultCard extends Component {
 }
 
 const CardS = styled(Card) `
-  width: 90%;
+  width: 60%;
 
-  @media (min-width: 500px) {
-    width: 60%;
-    background: green;
-  }
+ 
 `

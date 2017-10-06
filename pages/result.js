@@ -11,16 +11,22 @@ import AppBar from 'components/AppBar';
 import MuiThemeWrapper from 'hoc/MuiThemeWrapper';
 import Predict from 'util/Predict';
 import ResultCard from 'components/ResultCard';
+import ExplainSection from 'components/ExplainSection';
+import Grid from 'material-ui/Grid';
 
 const Result = ({ party }) => (
   <Background>
     <AppBar>Results</AppBar>
+    <Grid justify="center" align="center" direction="column" container>
     <Card>
       <Header gutter>Results</Header>
       <ResultCard
         party={party}
       />
     </Card>
+    <Header gutter>Was I right?</Header>
+    <ExplainSection party={party}/>
+    </Grid>
   </Background>
 )
 
@@ -36,5 +42,5 @@ export default withRedux(makeStore, null)(MuiThemeWrapper(Result));
 
 const Background = styled.div`
   margin-top: 40px;
-
+  width: 100%;
 `
