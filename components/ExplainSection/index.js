@@ -18,7 +18,7 @@ export default class ResultCard extends Component {
   };
 
   render() {
-    const { name, color, textColor } = this.props.party;
+    const { name, color, textColor, text } = this.props.party;
 
     const styles = {
       card: {
@@ -34,7 +34,7 @@ export default class ResultCard extends Component {
       },
     }
 
-    const text = `Based on your personality, we predict that you voted ${name} in the election`
+    // const text = `Based on your personality, we predict that you voted ${name} in the election`
     return (
       <Grid justify="center" align="center" direction="column" container>
         {!this.state.expanded && <div>

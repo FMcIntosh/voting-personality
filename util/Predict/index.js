@@ -45,52 +45,56 @@ export default (personality) => {
   }
 
   const { o, c, e, a, n } = personality;
+  const strength = o / 100;
 
+  let text = '';
 
-  // oppenness equals liberal
-  // Concientious equals conservative
-  // Low
+  if (o > 50) {
+    add(strength, [parties.green, parties.labour, parties.top]);
 
-  // if highly agreeable, left and big, low right and small
-  // a > 50
-  // labour+2, green+1, national+1
-  // a < 50
-  // act+2, nzf+2, top+1, maori+1
-
-  // if highly open left + small, low open right + big
-  // highly extraverted - nzf a bit higher
-  // High concientious = right
-  // Highly neurotic - favour change ie not national
-
-  let party = '';
-  console.log(personality.o)
-  switch (personality.o) {
-    case '1':
-      party = 'national'
-      break
-    case '2':
-      party = 'labour'
-      break
-    case '3':
-      console.log("WHAT")
-      party = 'nzf'
-      break
-    case '4':
-      party = 'green'
-      break
-    case '5':
-      party = 'top'
-      break
-    case '6':
-      party = 'act'
-      break
-    case '6':
-      party = 'maori'
-      break
-    default:
-      party = 'national'
+    text += "You are rank higher than 50 on oppenness, which research shows would suggest you are more likely to vote for socially liberal/left wing parties. "
   }
-  //TODO
-  console.log(party)
-  return parties[party]
+
+  if (o < 50) {
+    add(strength, [parties.national, parties.act, parties.nzf])
+    text += "You are rank lower than 50 on oppenness, which research shows would suggest you are more likely to vote for socially conservative/right wing parties. "
+  }
+
+  if (c < 50) {
+    add(strength, [parties.green, parties.labour, parties.top])
+    text += "You are rank lower than 50 on conscientiousness, which research shows would suggest you are more likely to vote for socially liberal/left wing parties. "
+  }
+
+  if (c > 50) {
+    add(strength, [parties.national, parties.act, parties.nzf])
+    text += "You are rank higher than 50 on conscientiousness, which research shows would suggest you are more likely to vote for socially conservative/right wing parties. "
+  }
+
+  if (a > 50) {
+    add(strength / 2, [parties.green, parties.labour, parties.top, parties.act])
+    text += "You are rank higher than 50 on agreeableness, which research shows would suggest you are somewhat more likely to vote for economically and socially liberal parties. "
+  }
+
+  if (a < 50) {
+    add(strength / 2, [parties.national, parties.act, parties.nzf])
+    "You are rank lower than 50 on agreeableness, which research shows would suggest you are somewhat more likely to vote for economically and socially conservative parties. "
+  }
+
+  text += "The strength of your personality on these factors will determine which party was predicted. "
+
+  let max = parties.national;
+  for (const [key, value] of Object.entries(parties)) {
+    if (value.predictor > max.predictor) {
+      max = value;
+    }
+  }
+
+  max.text = text;
+  return max;
+}
+
+const add = (strength, parties) => {
+  parties.forEach((party) => (
+    party.predictor += strength
+  ), this)
 }
