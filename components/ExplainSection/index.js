@@ -57,7 +57,7 @@ export default class ResultCard extends Component {
           <Collapse in={this.state.expanded} transitionDuration="auto" unmountOnExit>
             <CardContent>
             <Typography paragraph type="body2">
-            {true ? "Hello" + Explain: "Goodbye" + Explain}
+            {true ? "That's awesome! But I probobably just got lucky. " + Explain: "Oh bummer! s" + Explain}
             </Typography>
             </CardContent>
           </Collapse>
