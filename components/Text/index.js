@@ -8,7 +8,7 @@ import Typography from 'material-ui/Typography';
 // const theme = withTheme(getTheme)();
 
 
-export const Title = withTheme(({ theme, children, light }) => {
+export const Title = withTheme()(({ theme, children, light }) => {
   const style = {
     color: light ? "white" : theme.palette.text.primary,
     fontSize: "48px",
@@ -21,7 +21,7 @@ export const Title = withTheme(({ theme, children, light }) => {
   )
 })
 
-export const Header = withTheme(({ theme, children, light, gutter, style }) => {
+export const Header = withTheme()(({ theme, children, light, gutter, style }) => {
   const styles = {
     color: light ? "white" : theme.palette.text.primary,
     fontSize: "40px",
@@ -35,7 +35,7 @@ export const Header = withTheme(({ theme, children, light, gutter, style }) => {
   )
 })
 
-export const Paragraph = withTheme(({ theme, children, light, style}) => {
+export const Paragraph = withTheme()(({ theme, children, light, style}) => {
   const styles = {
     color: light ? theme.palette.primary[50] : theme.palette.text.primary,
     fontSize: "20px",

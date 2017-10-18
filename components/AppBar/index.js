@@ -27,4 +27,4 @@ const MyAppBar = ({ theme, children }) => {
   )
 }
 
-export default withTheme(MyAppBar);
+export default withTheme()(MyAppBar);
