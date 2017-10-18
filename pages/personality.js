@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Card from 'components/Card';
-import Button from 'components/Button';
+import Button from 'material-ui/Button';
 import PersonalitySection from 'components/PersonalitySection';
 import AppBar from 'components/AppBar';
 import { Header, Paragraph } from 'components/Text';
@@ -18,6 +18,9 @@ const Personality = ({ dispatch }) => (
       <Header gutter>Personality</Header>
       <Paragraph>First you will need to complete an online test to score your personality. Complete one here:
         </Paragraph> 
+      <Button color="accent">
+        <a href="https://www.truity.com/view/tests/big-five-personality">Personality Quiz</a>
+      </Button>
         <Paragraph>Enter your score below</Paragraph>    
       <PersonalitySection dispatch={dispatch}/>
     </Card>
